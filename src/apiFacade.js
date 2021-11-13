@@ -1,4 +1,4 @@
-const URL = "https://densorteudvikler.dk/tomcat/devops-starter/";
+const URL = "http://localhost:8080/cool";
 
 function handleHttpErrors(res) {
   if (!res.ok) {
@@ -54,9 +54,14 @@ function apiFacade() {
 
   };
 
-  const fetchData = () => {
+  const getJoke = () => {
+    const options = makeOptions("GET", true);
+    return fetch(URL + "/api/jokes", options).then(handleHttpErrors)
+  }
+
+  const fetchData = (endpoint, updateAction) => {
     const options = makeOptions("GET", true); //True add's the token
-    return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
+    return fetch(URL + "/api/" + endpoint, options).then(handleHttpErrors).then((data) => updateAction(data));
   };
   const makeOptions = (method, addToken, body) => {
     var opts = {
@@ -83,6 +88,7 @@ function apiFacade() {
     logout,
     fetchData,
     getAllCrypto,
+    getJoke,
   };
 }
 const facade = apiFacade();

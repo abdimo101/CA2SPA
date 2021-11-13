@@ -40,7 +40,7 @@ export default function App(props) {
               <Exercise1 facade={props.facade} />
             </Route>
             <Route path="/ex2">
-              <Exercise2 />
+              <Exercise2 facade={props.facade}/>
             </Route>
             <Route path="/ex3">
               <Exercise3 facade={props.facade} />

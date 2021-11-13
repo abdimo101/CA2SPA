@@ -54,15 +54,17 @@ function apiFacade() {
 
   };
 
-  const getJoke = () => {
+  const fetchLoggedIn = () => {
     const options = makeOptions("GET", true);
-    return fetch(URL + "/api/jokes", options).then(handleHttpErrors)
+    return fetch(URL + "/api/info/", options).then(handleHttpErrors)
   }
 
   const fetchData = (endpoint, updateAction) => {
     const options = makeOptions("GET", true); //True add's the token
     return fetch(URL + "/api/" + endpoint, options).then(handleHttpErrors).then((data) => updateAction(data));
   };
+  
+
   const makeOptions = (method, addToken, body) => {
     var opts = {
       method: method,
@@ -88,7 +90,7 @@ function apiFacade() {
     logout,
     fetchData,
     getAllCrypto,
-    getJoke,
+    fetchLoggedIn
   };
 }
 const facade = apiFacade();

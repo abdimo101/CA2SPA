@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/ca2";
+const URL = "https://densorteudvikler.dk/tomcat/devops-starter/";
 
 function handleHttpErrors(res) {
   if (!res.ok) {
@@ -36,9 +36,22 @@ function apiFacade() {
       });
   };
 
-  const getCrypto = () => {
+  function getCryptoTableRow(c){
+    return <tr>
+    <td>${c.from}</td>,
+    <td>${c.price}</td>
+    </tr>
+  }
+
+  const getAllCrypto = () => {
     const options = makeOptions("GET", true); //True add's the token
-    return fetch(URL + "/api/crypto/all", options).then(handleHttpErrors);
+    return fetch(URL + "/api/crypto/all", options).then(handleHttpErrors)
+  /*  .then(data => {const allRows = data.map(c => getCryptoTableRow(c))
+    const allRowsAsStrings = allRows.join("")
+      return allRowsAsStrings;
+    });
+    */
+
   };
 
   const fetchData = () => {
@@ -69,7 +82,7 @@ function apiFacade() {
     login,
     logout,
     fetchData,
-    getCrypto,
+    getAllCrypto,
   };
 }
 const facade = apiFacade();

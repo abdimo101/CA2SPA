@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/cool";
+const URL = "https://densorteudvikler.dk/tomcat/devops-starter";
 
 function handleHttpErrors(res) {
   if (!res.ok) {

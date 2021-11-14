@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import facade from "../apiFacade";
 
 
-function Exercise1({facade}) {
+function Crypto({facade}) {
   const [BCrypto, setBCrypto] = useState({ crypto: '', ref: ''});
   const [ETHCrypto, setETHCrypto] = useState({ crypto: '', ref: ''});
   const [DOGE, setDOGE] = useState({ crypto: '', ref: ''});
@@ -43,4 +43,4 @@ function Exercise1({facade}) {
   )
 }
 
-export default Exercise1;
+export default Crypto;

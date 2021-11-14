@@ -8,9 +8,9 @@ import {
 } from "react-router-dom";
 import "./style2.css";
 import Header from "./components/Header";
-import Exercise1 from "./components/Exercise1";
-import Exercise2 from "./components/Exercise2";
-import Exercise3 from "./components/Exercise3";
+import Crypto from "./components/Crypto";
+import AllApis from "./components/AllApis";
+import Jokes from "./components/Jokes";
 import facade from "./apiFacade";
 import LoggedIn from "./components/LoggedIn";
 import LogIn from "./components/Login";
@@ -37,13 +37,13 @@ export default function App(props) {
               <Home />
             </Route>
             <Route path="/ex1">
-              <Exercise1 facade={props.facade} />
+              <Crypto facade={props.facade} />
             </Route>
             <Route path="/ex2">
-              <Exercise2 facade={props.facade}/>
+              <AllApis facade={props.facade}/>
             </Route>
             <Route path="/ex3">
-              <Exercise3 facade={props.facade} />
+              <Jokes facade={props.facade} />
 
             </Route>
           </Switch>

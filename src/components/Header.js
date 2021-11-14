@@ -15,12 +15,12 @@ function Header() {
       </li>
       <li>
         <NavLink exact activeClassName="selected" to="/ex2">
-          Jokes
+          All Apis
         </NavLink>
       </li>
       <li>
         <NavLink exact activeClassName="selected" to="/ex3">
-          Exercise 3
+          Jokes
         </NavLink>
       </li>
     </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import facade from "../apiFacade";
 
-function Exercise2({facade}) {
+function AllApis({facade}) {
   const [joke, setJoke] = useState({ joke: '', ref: ''});
   const [BCrypto, setBCrypto] = useState({ crypto: '', ref: ''});
   const [ETHCrypto, setETHCrypto] = useState({ crypto: '', ref: ''});
@@ -43,4 +43,4 @@ function Exercise2({facade}) {
   )
 }
 
-export default Exercise2;
+export default AllApis;

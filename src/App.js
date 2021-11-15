@@ -88,6 +88,12 @@ function Home() {
           </div>
         )}
       </div>
+      <p>username: user | password: test1 <br/> username: admin | password: test2</p>
+      
+      <h3>How it works</h3>
+      <li>As a guest, you only get access to All APIs page</li>
+      <li>If you log in as user, you get access to Crypto, All APIs & CatFacts pages</li>
+      <li>If you log in as admin, you get access to All APIs & Jokes pages</li>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-const URL = "https://densorteudvikler.dk/tomcat/devops-starter";
+import {URL} from "./settings.js"
 
 function handleHttpErrors(res) {
   if (!res.ok) {
@@ -8,7 +8,7 @@ function handleHttpErrors(res) {
 }
 
 function apiFacade() {
-  /* Insert utility-methods from a latter step (d) here (REMEMBER to uncomment in the returned object when you do)*/
+  
 
   const setToken = (token) => {
     localStorage.setItem("jwtToken", token);
@@ -36,23 +36,6 @@ function apiFacade() {
       });
   };
 
-  function getCryptoTableRow(c){
-    return <tr>
-    <td>${c.from}</td>,
-    <td>${c.price}</td>
-    </tr>
-  }
-
-  const getAllCrypto = () => {
-    const options = makeOptions("GET", true); //True add's the token
-    return fetch(URL + "/api/crypto/all", options).then(handleHttpErrors)
-  /*  .then(data => {const allRows = data.map(c => getCryptoTableRow(c))
-    const allRowsAsStrings = allRows.join("")
-      return allRowsAsStrings;
-    });
-    */
-
-  };
 
   const fetchLoggedIn = () => {
     const options = makeOptions("GET", true);
@@ -89,7 +72,6 @@ function apiFacade() {
     login,
     logout,
     fetchData,
-    getAllCrypto,
     fetchLoggedIn
   };
 }

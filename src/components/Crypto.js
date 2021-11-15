@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import facade from "../apiFacade";
+import bitcoin from "./bitcoin_background.jpg"
+import "../index.css";
 
 
 function Crypto({facade}) {
@@ -27,19 +29,21 @@ function Crypto({facade}) {
   
 
   return (
-    <>
+    <div className="background2">
     
-    <h3>
+    <h1>Cryptocurrencies</h1>
+    <ul>
+     <li> prisen på {BCrypto.crypto} er: {BCrypto.ref}</li>
+     <li> prisen på {ETHCrypto.crypto} er: {ETHCrypto.ref}</li>
+     <li> prisen på {DOGE.crypto} er: {DOGE.ref}</li>
+     <li> prisen på {LTC.crypto} er: {LTC.ref}</li>
+     <li> prisen på {XRP.crypto} er: {XRP.ref}</li>
 
-      "prisen på {BCrypto.crypto} er: {BCrypto.ref}" <br/>
-      "prisen på {ETHCrypto.crypto} er: {ETHCrypto.ref}"<br/>
-      "prisen på {DOGE.crypto} er: {DOGE.ref}"<br/>
-      "prisen på {LTC.crypto} er: {LTC.ref}"<br/>
-      "prisen på {XRP.crypto} er: {XRP.ref}"<br/>
+    </ul>
 
-    </h3>
+    <img src={bitcoin} class="responsive"/>
 
-    </>
+    </div>
   )
 }
 

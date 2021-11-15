@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import facade from "../apiFacade";
+import "../index.css";
+import chuck from "./chucknorris.jpg";
 
 function AllApis({facade}) {
   const [joke, setJoke] = useState({ joke: '', ref: ''});
@@ -27,19 +29,21 @@ function AllApis({facade}) {
   
 
   return (
-    <>
-    
-    <h3>
-      "{joke.joke}"<br/>
-      "prisen på {BCrypto.crypto} er: {BCrypto.ref}" <br/>
-      "prisen på {ETHCrypto.crypto} er: {ETHCrypto.ref}"<br/>
-      "prisen på {DOGE.crypto} er: {DOGE.ref}"<br/>
-      "prisen på {LTC.crypto} er: {LTC.ref}"<br/>
-      "prisen på {XRP.crypto} er: {XRP.ref}"<br/>
-      
-    </h3>
+    <div className="background2">
+    <h1>All API's</h1>
+    <h2>Jokes</h2>
+      {joke.joke}
+    <h2>Cryptocurrencies</h2>
+    <ul>
+     <li> prisen på {BCrypto.crypto} er: {BCrypto.ref}</li>
+     <li> prisen på {ETHCrypto.crypto} er: {ETHCrypto.ref}</li>
+     <li> prisen på {DOGE.crypto} er: {DOGE.ref}</li>
+     <li> prisen på {LTC.crypto} er: {LTC.ref}</li>
+     <li> prisen på {XRP.crypto} er: {XRP.ref}</li>
 
-    </>
+    </ul>
+    <img src={chuck} class="responsive"/>
+    </div>
   )
 }
 

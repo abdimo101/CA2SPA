@@ -14,6 +14,9 @@ import Jokes from "./components/Jokes";
 import facade from "./apiFacade";
 import LoggedIn from "./components/LoggedIn";
 import LogIn from "./components/Login";
+import Advice from "./components/Advice";
+import CatFacts from "./components/CatFacts";
+import "./index.css"
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -36,15 +39,20 @@ export default function App(props) {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/ex1">
+            <Route path="/cryptopage">
               <Crypto facade={props.facade} />
             </Route>
-            <Route path="/ex2">
+            <Route path="/allapispage">
               <AllApis facade={props.facade}/>
             </Route>
-            <Route path="/ex3">
+            <Route path="/jokespage">
               <Jokes facade={props.facade} />
-
+            </Route>
+            <Route path="/catfactspage">
+              <CatFacts facade={props.facade} />
+            </Route>
+            <Route path="/advicepage">
+              <Advice facade={props.facade} />
             </Route>
           </Switch>
         </div>

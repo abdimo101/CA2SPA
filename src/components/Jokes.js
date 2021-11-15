@@ -1,6 +1,6 @@
 import facade from "../apiFacade";
 import { useState, useEffect } from "react";
-
+import norris from "./chucknorrisjoke.jpg"
 
 function Exercise3({facade}) {
   const [joke, setJoke] = useState({ joke: '', ref: ''});
@@ -15,12 +15,12 @@ function Exercise3({facade}) {
   }, [facade])
 
   return(
-    <>
+    <div className="background1">
     <h1> 
-      "{joke.joke}"
+      {joke.joke}
     </h1>
-
-    </>
+    <img src={norris} class="responsive"/>
+    </div>
   )
 }
 
